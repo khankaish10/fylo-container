@@ -1,0 +1,180 @@
+
+@font-face{
+    font-family: 'raleway';
+    src: url('./font/Raleway-Light.ttf');
+}
+
+.attribution { font-size: 11px; 
+                text-align: center;
+                grid-column: 2/3;
+              grid-row: 4/5;
+            }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+       --Pale-Blue: hsl(243, 100%, 93%);
+       --Grayish-Blue: hsl(229, 7%, 55%);
+      --Dark-Blue: hsl(228, 56%, 26%);
+      --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+body{
+ background-color: var(--Very-Dark-Blue);
+ color: white;
+
+}
+
+
+.main{
+ height: 99vh;
+ background-image: url('./images/bg-desktop.png');
+ background-repeat: no-repeat;
+background-position: bottom;
+display: grid;
+grid-template-columns: 25% auto 22%;
+grid-template-rows: 45% 25% 30% 1%;
+}
+.container{
+    grid-column:2/3;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.fylo-container{
+    background-color: var(--Dark-Blue);
+    width:40% ;
+    height: 90%;
+    border-radius: 8px 100px 8px 8px ;
+    padding: 3% ;
+    padding-top: 40px;
+}
+
+.storage-container{
+    background-color: var(--Dark-Blue);
+    width: 55%;
+    height: 65%;
+    padding: 30px;
+    border-radius: 8px  ;
+    font-family: 'raleway';
+    
+}
+.storage-container>p{
+    color: var(--Pale-Blue);
+}
+ span.white{
+    color: white;
+}
+
+.btn{
+    padding: 10px 15px 10px;
+    margin-top: 30px;
+    background-color: var(--Very-Dark-Blue);
+    width: 50px;
+    height: 45px;
+    border-radius: 8px;
+}
+
+.storage-bar{
+    margin: 30px 0px;
+    width: 100%;
+    height: 15%;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 10px ;
+    position: relative;
+}
+.storage-bar-fill{
+    background-image: linear-gradient(to right ,   hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%));
+    border-radius: 10px ;
+    height: 100%;
+    position: absolute;
+    width: 75%;
+}
+
+.circle{
+    position: absolute;
+    border-radius: 100%;
+   width: 18px;
+    height: 100%;
+    background-color:white;
+    right: 0;
+
+
+}
+
+.left-align{
+    position: absolute;
+    left: 0;
+    top: 30px;
+}
+.right-align{
+    position: absolute;
+    right: 0;
+    left: 120%;
+    top: 30px;
+
+}
+/* for mobile devices */
+
+@media screen and (max-width:424px){
+
+        body{
+            background: var(--Very-Dark-Blue);
+        }
+
+
+    .main{
+      
+        background-image:url('./images/bg-mobile.png') ;
+        height: 99vh;
+        display: grid;
+        grid-template-columns: 5% auto 5%;
+        grid-template-rows: 15% 35% 30% auto;
+    }
+
+   .container{
+       grid-area: 2/2/4/3;
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: column;
+       grid-row-gap: 10px;
+   }
+   .fylo-container{
+       justify-content: flex-start;
+       height: 45%;
+       width: 100%;
+       padding: 18%;
+   }
+   .btn{
+       height: 55px;
+       width: 65px;
+   }
+   /* .storage-bar{
+       margin: 30% 0px;
+   } */
+   .storage-container{
+       height: 50%;
+       width: 100%;
+       padding: 40px 10px 0px 40px;
+   }
+   .attribution{
+       display: flex;
+       align-items: flex-end;
+   }
+   .right-align{
+       position: absolute;
+       left: 100%;
+       top: 50px;
+   }
+   .left-align{
+       position: absolute;
+       top: 50px;
+   }
+}
